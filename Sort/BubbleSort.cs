@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sort
 {
-    class BubbleSort
+    class BubbleSort: ISort
     {
         int[] a;
         public BubbleSort(int[] a)
@@ -23,21 +23,18 @@ namespace Sort
             for (int i = 0; i < a.Length; i++)
             {
 
-                for (int j = 0; j < a.Length-1-i; j++)
+                for (int j = 0; (j < a.Length-1-i) && (a[j + 1] < a[j]); j++)
                 {
 
 
-                    if (a[j+1] < a[j])
-                    {
+                    
                         temp = a[j + 1];
                         a[j + 1] = a[j];
                         a[j] = temp;
                         CountOfChange++;
-                    }
+                    
                 }
-                Console.WriteLine($"{i} заход");
-                Print();
-                Console.WriteLine($"{i} конец");
+                
 
                 if (CountOfChange==0)
                 {
