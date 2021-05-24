@@ -25,34 +25,30 @@ namespace Sort
         public void Sort()
         {
 
-            int idmin;
+            int min;
             int idmax;
             
-            int temp;
-            for (int i = 0; i < a.Length-1; i++)
+            int temp, j,i;
+
+            for (i = 0; i < a.Length ; i++)
             {
-                idmax = i;
-                idmin = i;
-                for (int j = 0; j < a.Length-j; j++)
+                idmax = 0;
+
+                for (j   = 0; j < a.Length-i; j++)
                 {
                     if (a[j]>a[idmax])
                     {
-                        
                         idmax = j;
-                        
                     }
                 }
-                if (idmax != i)
-                {
 
-
-                    temp = a[a.Length - i];
-                    a[a.Length - i] = a[idmax];
-                    a[idmax] = temp;
-                    
-                }
-                    
+                temp = a[a.Length - i - 1];
+                a[a.Length - i - 1] = a[idmax];
+                a[idmax] = temp;
             }
+            
+            
+           
         }
     }
 }
