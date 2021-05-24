@@ -9,10 +9,10 @@ namespace Sort
     class SelectionSort : ISort
     {
         int[] a;
+
         public SelectionSort(int[] a)
         {
             this.a = a;
-
         }
         public void Print()
         {
@@ -24,19 +24,34 @@ namespace Sort
 
         public void Sort()
         {
-            int temp;
-            for (int i = 1; i < a.Length; i++)
-            {
-                for (int j =i; (j>0) && (a[j-1]>a[j]) ; j--)
-                {
-                    temp = a[j - 1];
-                    a[j - 1] = a[j];
-                    a[j] = temp;
-                    Console.WriteLine(a[j]);
-                }
 
-                Console.WriteLine($"{i} проход");
-                
+            int idmin;
+            int idmax;
+            
+            int temp;
+            for (int i = 0; i < a.Length-1; i++)
+            {
+                idmax = i;
+                idmin = i;
+                for (int j = 0; j < a.Length-j; j++)
+                {
+                    if (a[j]>a[idmax])
+                    {
+                        
+                        idmax = j;
+                        
+                    }
+                }
+                if (idmax != i)
+                {
+
+
+                    temp = a[a.Length - i];
+                    a[a.Length - i] = a[idmax];
+                    a[idmax] = temp;
+                    
+                }
+                    
             }
         }
     }
