@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sort
 {
-    class SelectionSort : ISort
+    class DoubleSelectionSort : ISort
     {
         int[] a;
-
-        public SelectionSort(int[] a)
+        public DoubleSelectionSort(int[] a)
         {
             this.a = a;
         }
@@ -25,30 +24,36 @@ namespace Sort
         public void Sort()
         {
 
-            
-            int idmax;
-            
-            int temp, j,i;
+            int idmax, idmin;
 
-            for (i = 0; i < a.Length ; i++)
+            int temp, j, i;
+
+            for (i = 0; i < a.Length/2; i++)
             {
-                idmax = 0;
+                idmax = i;
+                idmin = i;
 
-                for (j   = 0; j < a.Length-i; j++)
+                for (j = i; j < a.Length - i; j++)
                 {
-                    if (a[j]>a[idmax])
+                    if (a[j] > a[idmax])
                     {
                         idmax = j;
+                    }
+                    if (a[j]<a[idmin])
+                    {
+                        idmin = j;
                     }
                 }
 
                 temp = a[a.Length - i - 1];
                 a[a.Length - i - 1] = a[idmax];
                 a[idmax] = temp;
+
+                temp = a[i];
+                a[i] = a[idmin];
+                a[idmin] = temp;
             }
-            
-            
-           
+
         }
     }
 }
