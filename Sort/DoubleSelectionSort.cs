@@ -46,14 +46,17 @@ namespace Sort
                         idmin = j;
                     }
                 }
+                
 
                 temp = a[i];
-                if (i==idmax)
+                a[i] = a[idmin];
+                a[idmin] = temp;
+                //Меняем минимальный с первым неотсортированным
+                if (i == idmax)
                 {
                     idmax = idmin;
                 }
-                a[i] = a[idmin];
-                a[idmin] = temp;
+                //Если первый был максимльный, то он переместился на место самого маленького.
 
                 temp = a[a.Length - i - 1];
                 a[a.Length - i - 1] = a[idmax];
@@ -64,13 +67,7 @@ namespace Sort
 
 
 
-                //temp = a[a.Length - i - 1];
-                //a[a.Length - i - 1] = a[idmax];
-                //a[idmax] = temp;
-
-                //temp = a[i];
-                //a[i] = a[idmin];
-                //a[idmin] = temp;
+               
             }
 
         }
