@@ -10,5 +10,6 @@ namespace Sort
     {
         public void Print();
         public void Sort();
+        public Task SortAsync();
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sort
@@ -27,17 +28,22 @@ namespace Sort
             int temp;
             for (int i = 1; i < a.Length; i++)
             {
-                for (int j =i; (j>0) && (a[j-1]>a[j]) ; j--)
+                for (int j = i; (j > 0) && (a[j - 1] > a[j]); j--)
                 {
                     temp = a[j - 1];
                     a[j - 1] = a[j];
                     a[j] = temp;
-                    
+
                 }
 
-                
-                
+
+
             }
+        }
+
+        public async Task SortAsync()
+        {
+            await Task.Run(()=>Sort());
         }
     }
 }

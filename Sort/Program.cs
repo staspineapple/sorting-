@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Sort
 {
@@ -14,7 +16,10 @@ namespace Sort
             SelectionSort s = new SelectionSort(a);
             DoubleSelectionSort d = new DoubleSelectionSort(a);
 
-            d.Sort();
+        
+
+            Task t = d.SortAsync();
+            t.Wait();
             d.Print();
 
             //s.Sort();

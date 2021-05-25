@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sort
@@ -32,6 +33,7 @@ namespace Sort
             {
                 idmax = i;
                 idmin = i;
+                Thread.Sleep(100);
 
                 for (j = i; j < a.Length - i; j++)
                 {
@@ -54,6 +56,11 @@ namespace Sort
                 a[idmin] = temp;
             }
 
+        }
+
+        public async Task SortAsync()
+        {
+            await Task.Run(() => Sort());
         }
     }
 }

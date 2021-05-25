@@ -56,5 +56,10 @@ namespace Sort
                 Console.WriteLine(item);
             }
         }
+
+        public async Task SortAsync()
+        {
+            await Task.Run(() => Sort());
+        }
     }
 }
