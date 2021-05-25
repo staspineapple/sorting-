@@ -33,7 +33,7 @@ namespace Sort
             {
                 idmax = i;
                 idmin = i;
-                Thread.Sleep(100);
+                
 
                 for (j = i; j < a.Length - i; j++)
                 {
@@ -47,13 +47,30 @@ namespace Sort
                     }
                 }
 
+                temp = a[i];
+                if (i==idmax)
+                {
+                    idmax = idmin;
+                }
+                a[i] = a[idmin];
+                a[idmin] = temp;
+
                 temp = a[a.Length - i - 1];
                 a[a.Length - i - 1] = a[idmax];
                 a[idmax] = temp;
 
-                temp = a[i];
-                a[i] = a[idmin];
-                a[idmin] = temp;
+
+
+
+
+
+                //temp = a[a.Length - i - 1];
+                //a[a.Length - i - 1] = a[idmax];
+                //a[idmax] = temp;
+
+                //temp = a[i];
+                //a[i] = a[idmin];
+                //a[idmin] = temp;
             }
 
         }
