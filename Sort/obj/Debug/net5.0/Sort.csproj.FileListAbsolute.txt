@@ -30,3 +30,6 @@ C:\Users\Стас\source\repos\Sort\sorting-\Sort\obj\Debug\net5.0\Sort.dll
 C:\Users\Стас\source\repos\Sort\sorting-\Sort\obj\Debug\net5.0\ref\Sort.dll
 C:\Users\Стас\source\repos\Sort\sorting-\Sort\obj\Debug\net5.0\Sort.pdb
 C:\Users\Стас\source\repos\Sort\sorting-\Sort\obj\Debug\net5.0\Sort.genruntimeconfig.cache
+C:\Users\StasPortable\source\repos\Sort\Sort\bin\Debug\net5.0\NumberSystem.dll
+C:\Users\StasPortable\source\repos\Sort\Sort\bin\Debug\net5.0\NumberSystem.pdb
+C:\Users\StasPortable\source\repos\Sort\Sort\obj\Debug\net5.0\Sort.csproj.CopyComplete
